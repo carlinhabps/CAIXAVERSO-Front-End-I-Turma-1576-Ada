@@ -1,18 +1,21 @@
-/* * Geral */
+/* ! Geral */
 
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Jersey+25&family=Playwrite+NO:wght@100..400&family=Roboto:ital,wdth@0,75..100;1,75..100&family=Story+Script&display=swap");
 
 * {
-  /* margin: 0; */
-  /* padding: 0; */
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
 h1,
 h2 {
   font-family: "Indie Flower", cursive;
+  color: #6a3650;
 }
 
 h1 {
@@ -22,6 +25,38 @@ h1 {
 h2 {
   font-size: 25px;
 }
+
+/* ! Barra de Navegação */
+
+.navbar {
+  background: linear-gradient(0deg, #c88caa, #a6509f);
+  position: sticky;
+  top: 0;
+}
+
+.navbar-container {
+  margin: 0 100px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar li,
+.navbar a {
+  list-style-type: none;
+  text-decoration: none;
+  font-style: italic;
+  color: #462435;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+}
+
+/* ! Conteúdo */
 
 .product h3 {
   color: blueviolet;
@@ -47,5 +82,4 @@ h2 {
 
 .product img {
   max-width: 500px;
-  /* aspect-ratio: 1/1; */
 }
