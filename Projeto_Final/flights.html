@@ -11,18 +11,18 @@
   <body>
     <header class="vm-navbar">
       <div class="vm-navbar-container">
+        <button class="vm-hamburguer-icon" id="vm-hamburguer-icon">☰</button>
+
         <a href="./index.html">
           <img src="./images/Logo1.png" alt="Logo da VoaMundo" />
         </a>
 
         <nav>
-          <ul class="vm-navbar-menu">
-            <li>
-              <a href="./index.html">Home</a>
-            </li>
-            <li><a href="#vm-newsletter">Descontos</a></li>
-            <li><a href="./index.html#vm-gallery">Galeria</a></li>
+          <ul class="vm-navbar-menu" id="vm-navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="./index.html" target="_blank">Store</a></li>
             <li><a href="./blog.html" target="_blank">Blog</a></li>
+            <li><a href="#vm-newsletter">Descontos</a></li>
           </ul>
         </nav>
       </div>
@@ -203,5 +203,14 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      const btn = document.getElementById("vm-hamburguer-icon");
+      const menu = document.getElementById("vm-navbar-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

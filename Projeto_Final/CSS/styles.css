@@ -37,6 +37,8 @@
 }
 
 .vm-navbar-container {
+  margin: 0 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,6 +76,15 @@
 
 .vm-navbar-menu a:hover {
   text-decoration: underline;
+}
+
+.vm-hamburguer-icon {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff1b6b;
 }
 
 /* ! Conteúdo */
@@ -481,7 +492,39 @@ footer p {
 
 /* ! Responsividade */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  /*! NavBar */
+
+  .vm-navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fdefef;
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-right: 3px solid #ff1b6b;
+    border-bottom: 3px solid #ff1b6b;
+    font-weight: 700;
+  }
+
+  .vm-navbar-menu li {
+    padding-left: 30px;
+  }
+
+  .vm-navbar-menu.active {
+    display: flex;
+  }
+
+  .vm-hamburguer-icon {
+    display: block;
+  }
+
+  .vm-navbar-container {
+    padding: 0 30px;
+  }
+
   /*! Index */
 
   .vm-products-container {
@@ -512,6 +555,10 @@ footer p {
 
   footer p {
     font-size: 10px;
+  }
+
+  .vm-main-container p {
+    text-align: center;
   }
 
   /*! Produtos */
