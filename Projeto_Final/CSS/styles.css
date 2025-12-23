@@ -482,9 +482,7 @@ footer p {
 /* ! Responsividade */
 
 @media (max-width: 480px) {
-  .vm-navbar h2 {
-    display: none;
-  }
+  /*! Index */
 
   .vm-products-container {
     margin: 20px 30px;
@@ -516,6 +514,8 @@ footer p {
     font-size: 10px;
   }
 
+  /*! Produtos */
+
   #vm-cruise-container {
     margin: 0 20px;
     flex-direction: column;
@@ -532,16 +532,20 @@ footer p {
     gap: 20px;
   }
 
-  .vm-main-aside-container {
-    display: inline;
+  /*! Blog */
+
+  .vm-navbar h2 {
+    display: none;
   }
 
-  .vm-main-aside-container main,
   .vm-main-aside-container aside {
-    margin: 0 30px;
+    display: none;
   }
 
-  .vm-main-aside-container main {
-    max-width: 100%;
+  .vm-title,
+  .vm-slogan,
+  .vm-introduction,
+  .vm-article {
+    margin: 0 20px;
   }
 }
