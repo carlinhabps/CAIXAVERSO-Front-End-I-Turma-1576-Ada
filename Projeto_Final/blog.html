@@ -11,13 +11,16 @@
   <body>
     <header class="vm-navbar">
       <div class="vm-navbar-container">
+        <button class="vm-hamburguer-icon" id="vm-hamburguer-icon">☰</button>
+
         <a href="#">
           <img src="./images/Logo1.png" alt="Logo da VoaMundo" />
         </a>
         <h2>Blog do VoaMundo</h2>
 
         <nav>
-          <ul class="vm-navbar-menu">
+          <ul class="vm-navbar-menu" id="vm-navbar-menu">
+            <li><a href="#">Home</a></li>
             <li><a href="./index.html" target="_blank">Store</a></li>
             <li><a href="#vm-faq">Dúvidas</a></li>
             <li><a href="#vm-newsletter">Descontos</a></li>
@@ -47,6 +50,7 @@
             <span>investimento</span> em bem‑estar, memória e felicidade.
           </p>
         </section>
+
         <article id="vm-article1" class="vm-article">
           <h3 class="vm-article-title">
             Destinos Brasileiros Perfeitos para Quem Quer Viajar em 2025
@@ -496,5 +500,14 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      const btn = document.getElementById("vm-hamburguer-icon");
+      const menu = document.getElementById("vm-navbar-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

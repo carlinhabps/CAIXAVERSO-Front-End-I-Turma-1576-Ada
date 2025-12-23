@@ -1,3 +1,8 @@
+/* ! Recado */
+
+/*? Professor, tentei usar de todo jeito o bootstrap, mas tudo que eu usava bagunçava a estilização que eu coloquei e saía do padrão... daí desisti e fiz como eu sabia que era colocar o botão, mas pro JS tive ajuda do copilot rsrsrs */
+
+
 /* ! Página */
 
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Indie+Flower&family=Jersey+25&family=Kite+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Playwrite+NO:wght@100..400&family=Roboto:ital,wdth@0,75..100;1,75..100&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap");
@@ -8,7 +13,7 @@
   box-sizing: border-box;
 
   font-size: 20px;
-  color: #051f52;
+  color: #04173d;
   /* font-family: "Sour Gummy", sans-serif; */
   font-family: "Kite One", sans-serif;
 
@@ -37,6 +42,8 @@
 }
 
 .vm-navbar-container {
+  margin: 0 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,6 +81,15 @@
 
 .vm-navbar-menu a:hover {
   text-decoration: underline;
+}
+
+.vm-hamburguer-icon {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff1b6b;
 }
 
 /* ! Conteúdo */
@@ -138,7 +154,7 @@
 }
 
 .vm-main-container .vm-product figcaption {
-  color: #051f52;
+  color: #04173d;
   font-weight: 700;
   font-size: 25px;
   font-family: "Indie Flower", cursive;
@@ -182,9 +198,6 @@
 }
 
 /* ? FAQ */
-
-#vm-faq summary {
-}
 
 #vm-faq details[open] summary {
   margin: 10px 0;
@@ -338,7 +351,11 @@ form button:hover {
   display: block;
 }
 
-#vm-cruise-container .vm-cruise-container img {
+.vm-cruise-container:hover {
+  border: solid #ff1b6b 1px;
+}
+
+.vm-cruise-container img {
   width: 100%;
   height: 45%;
   object-fit: cover;
@@ -393,6 +410,7 @@ form button:hover {
   /* bottom: 80px; */
 }
 /*! professor, esse não deu certo.. gostaria que o aside rolasse junto com a página mas que travasse quando chegasse ao final do conteúdo do aside, mesmo ainda tendo conteúdo no main.. Mas se eu ativo o sticky, ele trava e só rola depois que chega no final */
+
 /* .vm-main-aside-container aside div:first-child {
   text-align: center;
   position: sticky;
@@ -433,7 +451,7 @@ form button:hover {
 }
 
 .vm-main-aside-container .vm-product figcaption {
-  color: #051f52;
+  color: #04173d;
   font-weight: 700;
   font-family: "Indie Flower", cursive;
   text-align: center;
@@ -475,4 +493,111 @@ footer div {
 footer p {
   font-size: 13px;
   padding: 2px;
+}
+
+/* ! Responsividade */
+
+@media (max-width: 768px) {
+  /*! NavBar */
+
+  .vm-navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fdefef;
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-right: 3px solid #ff1b6b;
+    border-bottom: 3px solid #ff1b6b;
+    font-weight: 700;
+  }
+
+  .vm-navbar-menu li {
+    padding-left: 30px;
+  }
+
+  .vm-navbar-menu.active {
+    display: flex;
+  }
+
+  .vm-hamburguer-icon {
+    display: block;
+  }
+
+  .vm-navbar-container {
+    padding: 0 30px;
+  }
+
+  /*! Index */
+
+  .vm-products-container {
+    margin: 20px 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .vm-subtitle {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .vm-gallery-grid {
+    margin: 0 30px;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  #vm-faq summary,
+  #vm-faq p {
+    padding: 0 20px;
+  }
+
+  footer {
+    position: relative;
+  }
+
+  footer p {
+    font-size: 10px;
+  }
+
+  .vm-main-container p {
+    text-align: center;
+  }
+
+  /*! Produtos */
+
+  #vm-cruise-container {
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vm-cruise-container {
+    min-width: calc(100% - 15px);
+  }
+
+  .vm-products-container-2 {
+    grid-template-columns: 1fr;
+    margin: 0 40px;
+    gap: 20px;
+  }
+
+  /*! Blog */
+
+  .vm-navbar h2 {
+    display: none;
+  }
+
+  .vm-main-aside-container aside {
+    display: none;
+  }
+
+  .vm-title,
+  .vm-slogan,
+  .vm-introduction,
+  .vm-article {
+    margin: 0 20px;
+  }
 }
