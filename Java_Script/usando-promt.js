@@ -25,9 +25,9 @@
 
 let nomeAluno = prompt("Nome do Aluno");
 
-let noota1 = prompt("Digite a nota da primeira prova:");
+let noota1 = Number(prompt("Digite a nota da primeira prova:"));
 
-let noota2 = prompt("Digite a nota da segunda prova:");
+let noota2 = Number(prompt("Digite a nota da segunda prova:"));
 
 const notaFinal = (noota1 * 4 + noota2 * 6) / 10;
 
