@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Indie+Flower&family=Jersey+25&family=Kite+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Playwrite+NO:wght@100..400&family=Roboto:ital,wdth@0,75..100;1,75..100&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Playwrite NO", cursive;
+}
+
+h1 {
+  color: coral;
+  text-align: center;
+}
+
+form {
+  margin-left: 50px;
+}
+
+form label {
+  color: darkslategray;
+  font-weight: 700;
+}
+
+form label span {
+  color: coral;
+}
+
+form input {
+  margin-left: 15px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 15px;
+  background-color: darkslategray;
+  color: coral;
+  font-weight: 700;
+  border: solid 1px coral;
+  border-radius: 5px;
+}
+
+#resultado {
+  text-align: center;
+  font-weight: 900;
+  font-size: 25px;
+  color: darkslategray;
+}
+
+.nomeAluno,
+.media {
+  color: coral;
+  font-size: 40px;
+  font-family: "Jersey 25", sans-serif;
+}
+
+.notasAluno {
+  font-size: 20px;
+}
