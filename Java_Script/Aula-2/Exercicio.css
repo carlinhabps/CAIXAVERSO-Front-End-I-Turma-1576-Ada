@@ -13,20 +13,20 @@ h1 {
   text-align: center;
 }
 
-form {
+.form-aluno {
   margin-left: 50px;
 }
 
-form label {
+.form-aluno label {
   color: darkslategray;
   font-weight: 700;
 }
 
-form label span {
+.form-aluno label span {
   color: coral;
 }
 
-form input {
+.form-aluno input {
   margin-left: 15px;
 }
 

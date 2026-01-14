@@ -13,17 +13,21 @@
     </header>
     <main>
       <br />
-      <form action="">
+      <div class="form-aluno">
         <label for="nomeAluno">Nome do Aluno(a):</label>
         <br />
 
-        <input type="text" id="nomeAluno" name="Nome do Aluno" />
+        <input
+          type="text"
+          id="nomeAluno"
+          placeholder="Digite o nome completo"
+        />
         <br />
         <br />
 
         <label for="nota1"
-          >Digite a nota da <span>primeira</span> avaliação:</label
-        >
+          >Digite a nota da <span>primeira</span> avaliação - peso 2:
+        </label>
         <br />
 
         <input type="text" id="nota1" name="Nota1" />
@@ -46,7 +50,7 @@
         <br />
 
         <button type="button" onclick="calcularMedia()">Calcular!</button>
-      </form>
+      </div>
 
       <div id="resultado">
         Notas cadastradas para <span class="nomeAluno"></span>:
