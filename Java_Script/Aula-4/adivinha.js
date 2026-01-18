@@ -21,9 +21,12 @@ function adivinhar() {
       alert(
         `Parabéns! Você acertou o número ${numeroSecreto} em ${tentativa} tentativas!`
       );
-      (document.getElementById("mensagem").innerHTML =
-        "Vitória! Último número:"),
-        numeroSecreto;
+      document.getElementById("mensagem").innerHTML = `
+        Vitória! Último número: ${numeroSecreto}`;
+    } else if (chute > numeroSecreto) {
+      alert("MENOS! O néumero secreto é menor.");
+    } else if (chute < numeroSecreto) {
+      alert("MAIOR! O néumero secreto é maior.");
     }
   }
 }
