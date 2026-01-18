@@ -44,7 +44,7 @@ function renderizarAgenda() {
     lista.innerHTML += `
       <li>
         <strong>${p.nome}:</strong>
-        <strong>${p.email}</strong>
+        ${p.email}
       </li>
     `;
   }
