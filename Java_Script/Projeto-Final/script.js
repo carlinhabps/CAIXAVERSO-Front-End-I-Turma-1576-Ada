@@ -1,13 +1,13 @@
 const usuario = {
   nome: "Carla Beatriz",
-  saldo: 10000,
+  saldo: 100000,
 };
 
 const transacoes = [];
 transacoes.push({
-  valor: 10000,
+  valor: usuario.saldo,
   descricao: "Saldo inicial",
-  transacao: "credito",
+  transacao: "saldo",
   data: new Date(),
   id: Date.now(),
 });
@@ -24,10 +24,10 @@ html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
 
 function atualizarSaldo() {
   usuario.saldo = transacoes.reduce((total, valor) => {
-    if (valor.transacao === "credito") {
-      return total + valor.valor;
-    } else {
+    if (valor.transacao === "debito") {
       return total - valor.valor;
+    } else {
+      return total + valor.valor;
     }
   }, 0);
 
@@ -53,11 +53,18 @@ function renderizarExtrato() {
       currency: "BRL",
     });
 
+    let corTransacao;
+    if (p.transacao === "credito") {
+      corTransacao = "entrada";
+    } else if (p.transacao === "debito") {
+      corTransacao = "saida";
+    }
+
     extrato.innerHTML += `
     <tr>
-      <td>${dataFormatada}</td>
-      <td>${descricaoFormatada}</td>
-      <td>${valorFormatado}</td>
+      <td class="${corTransacao}">${dataFormatada}</td>
+      <td class="${corTransacao}">${descricaoFormatada}</td>
+      <td class="${corTransacao}">${valorFormatado}</td>
     </tr>
     `;
   }
