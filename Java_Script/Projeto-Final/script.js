@@ -10,18 +10,6 @@ transacoes.push({
   transacao: "credito",
   id: Date.now(),
 });
-transacoes.push({
-  valor: 7000,
-  descricao: "Pagamento 1",
-  transacao: "debito",
-  id: Date.now(),
-});
-transacoes.push({
-  valor: 2000,
-  descricao: "aluguel",
-  transacao: "credito",
-  id: Date.now(),
-});
 
 console.log(transacoes);
 
@@ -51,10 +39,24 @@ function atualizarSaldo() {
 }
 
 function novaTransacao(botao) {
-  const valorInformado = Number(prompt("Informe o valor da transação:"));
-  const descricaoInfromada = prompt("Descrição da transação:");
+  let valorInformado = prompt("Informe o valor da transação");
+
+  valorInformado = Number(valorInformado.replace(",", "."));
+
+  if (isNaN(valorInformado)) {
+    alert("Por favor, informe um valor numérico válido.");
+    return novaTransacao();
+  } else if (valorInformado < 0) {
+    alert("Por favor, informe o valor SEM o sinal de menos!");
+    return novaTransacao();
+  }
+
+  const descricaoInfromada = prompt(
+    "Por favor, informe a descrição da transação:"
+  );
 
   let tipoTransacao;
+
   if (botao === "deposito") {
     tipoTransacao = "credito";
   } else if (botao === "pagamento") {
