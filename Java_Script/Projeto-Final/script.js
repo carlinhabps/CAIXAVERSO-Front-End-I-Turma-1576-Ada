@@ -43,4 +43,30 @@ function atualizarSaldo() {
   }, 0);
 
   console.log(usuario.saldo);
+
+  html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function novaTransacao(botao) {
+  const valorInformado = Number(prompt("Informe o valor da transação:"));
+  const descricaoInfromada = prompt("Descrição da transação:");
+
+  let tipoTransacao;
+  if (botao === "deposito") {
+    tipoTransacao = "credito";
+  } else if (botao === "pagamento") {
+    tipoTransacao = "debito";
+  }
+
+  transacoes.push({
+    valor: valorInformado,
+    descricao: descricaoInfromada,
+    transacao: tipoTransacao,
+    id: Date.now(),
+  });
+
+  atualizarSaldo();
 }
