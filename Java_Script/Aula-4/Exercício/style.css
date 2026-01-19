@@ -1,0 +1,40 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0e7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* ocupa toda a altura do navegador */
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+button {
+  background-color: #4338ca;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer; /*! não pode faltar no botão - importante por causa da acessibilidade */
+  margin-bottom: 20px;
+}
+
+#resultado {
+  display: none;
+  border-top: 2px dashed #ccc;
+}
+
+.sucesso {
+  color: #166534;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
