@@ -1,0 +1,105 @@
+/* geral */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.botao-padrao {
+    text-decoration: none;
+    background-color: brown;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Estilos da Homepage */
+.titulo-principal {
+    font-size: 36px;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.titulo-secao {
+    font-size: 24px;
+}
+
+.produtos-destaque {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.produto h3{
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.produto img {
+    height: 250px;
+}
+
+.produto a {
+   text-decoration: none;
+   background-color: brown;
+   display: block;
+   color: white; 
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.mais-vendidos li {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: goldenrod;
+}
+
+/* Página de produto */
+.detalhes-produto {
+    display: flex;
+    gap: 20px;
+}
+
+.detalhes-produto img {
+    height: 300px;
+}
+
+.detalhes-produto table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+.detalhes-produto th {
+    background-color: brown;
+    border: 1px solid white !important;
+    color: white;
+}
+
+.detalhes-produto th, 
+.detalhes-produto td {
+    border: 1px solid brown;
+    padding: 5px;
+    text-align: center;
+}
+

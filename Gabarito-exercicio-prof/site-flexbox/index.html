@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aumiau Pet Store | Treinando git parte 2</title>
+        <link href="css/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container">
+                <img src="imagens/logo.svg" alt="Logo da Aumiau store" class="logo" />
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#destaques">Destaques</a></li>
+                        <li><a href="#mais-vendidos">Mais vendidos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container conteudo-pagina">
+            <main>
+                <h1 class="titulo-principal">Bem vindos ao site da Aumiau Store</h1>
+                <p class="slogan">Os melhores modelos de roupas para pets estão aqui.</p>
+                <section id="destaques">
+                    <h2 class="titulo-secao">Produtos em destaque:</h2>
+                    <ul class="produtos-destaque">
+                        <li class="produto">
+                            <figure>
+                                <img src="imagens/chucky.png" alt="cão e gato usando fantasia do chucky" />
+                                <figcaption>Fantasia Chucky - Edição limitada</figcaption>
+                            </figure>
+                            <h3>Roupinha do Chucky</h3>
+                            <a href="chucky.html">Clique aqui para detalhes</a>
+                        </li>
+                        <li class="produto">
+                            <figure>
+                                <img src="imagens/cowboy.webp" />
+                                <figcaption>Fantasia Cowboy - Edição limitada</figcaption>
+                            </figure>
+                            <h3>Roupinha Cowboy</h3>
+                            <a href="cowboy.html">Clique aqui para detalhes</a>
+                        </li>
+                        <li class="produto">
+                            <figure>
+                                <img src="imagens/dino.png" />
+                                <figcaption>Fantasia Dino - Edição limitada</figcaption>
+                            </figure>
+                            <h3>Roupinha Dino</h3>
+                            <a href="dino.html">Clique aqui para detalhes</a>
+                        </li>
+                    </ul>
+                </section>
+                <section id="newsletter">
+                    <h2 class="titulo-secao">Assine nossa newsletter!</h2>
+                    <form action="https://httpbin.org/post" method="POST">
+                        <div class="item-formulario">
+                            <label for="nome-tutor">Nome do Tutor:</label>
+                            <input type="text" id="nome-tutor" name="nome-tutor" placeholder="Digite seu nome..." />
+                        </div>
+                        <div class="item-formulario">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
+                        </div>
+                        <div class="item-formulario">
+                            <label for="tipo-pet">Qual o tipo do seu pet?</label>
+                            <select id="tipo-pet" name="tipo-pet">
+                                <option value="" selected disabled>-- Selecione uma opção --</option>
+                                <option value="cao">Cão</option>
+                                <option value="gato">Gato</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="item-formulario">
+                            <label for="nascimento-pet">Data de Nascimento do Pet:</label>
+                            <input type="date" id="nascimento-pet" name="nascimento-pet" />
+                        </div>
+                        <div class="item-formulario">
+                            <label for="sugestao">Sugestão:</label>
+                            <textarea id="sugestao" name="sugestao" placeholder="Deixe sua sugestão aqui..."></textarea>
+                        </div>
+                        <!-- As duas maneiras de criar botão submit estão corretas -->
+                        <!-- <input type="submit" value="Quero Descontos!" /> -->
+                        <button type="submit">Quero descontos!</button>
+                    </form>
+                </section>
+            </main>
+            <aside>
+                <section id="mais-vendidos">
+                    <h2 class="titulo-secao">Produtos mais vendidos:</h2>
+                    <ol class="mais-vendidos">
+                        <li>Dinossauro</li>
+                        <li>Cowboy</li>
+                        <li>Chucky</li>
+                    </ol> 
+                </section>
+            </aside>  
+        </div>
+        <section id="galeria">
+            <div class="container">
+                <h2 class="titulo-secao">Clientes Felizes</h2>
+                <div class="galeria-grid">
+                    <img src="https://placecats.com/200/200" alt="Gato cliente feliz" />
+                    <img src="https://placedog.net/200/200" alt="Cachorro cliente feliz" />
+                    <img src="https://placecats.com/201/201" alt="Gato cliente feliz" />
+                    <img src="https://placedog.net/201/201" alt="Cachorro cliente feliz" />
+                    <img src="https://placecats.com/202/202" alt="Gato cliente feliz" />
+                    <img src="https://placedog.net/202/202" alt="Cachorro cliente feliz" />
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>2025 Aumiau Pet Store - Desenvolvido na aula de front-end</p>
+        </footer>
+    </body>
+</html>

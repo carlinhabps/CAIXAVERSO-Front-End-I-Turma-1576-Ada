@@ -1,0 +1,170 @@
+/* geral */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.botao-padrao {
+    text-decoration: none;
+    background-color: brown;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Estilos da Homepage */
+.titulo-principal {
+    font-size: 36px;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.titulo-secao {
+    font-size: 24px;
+}
+
+.produtos-destaque {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.produto h3{
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.produto img {
+    height: 250px;
+}
+
+.produto a {
+   text-decoration: none;
+   background-color: brown;
+   display: block;
+   color: white; 
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.mais-vendidos li {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: goldenrod;
+}
+
+/* Página de produto */
+.detalhes-produto {
+    display: flex;
+    gap: 20px;
+}
+
+.detalhes-produto img {
+    height: 300px;
+}
+
+.detalhes-produto table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+.detalhes-produto th {
+    background-color: brown;
+    border: 1px solid white !important;
+    color: white;
+}
+
+.detalhes-produto th, 
+.detalhes-produto td {
+    border: 1px solid brown;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Formulário de compra */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 400px;
+    -webkit-box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.32); 
+    box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.32);
+}
+
+form h2 {
+    color: brown;
+    margin-bottom: 15px;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 15px;
+   border: 1px solid #cccccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+form input[type="radio"]:first-of-type {
+    margin-left: 0px;
+}
+
+form p {
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+form button[type="submit"] {
+    background-color: brown;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+form button[type="submit"]:hover {
+    background-color: orangered;
+}
