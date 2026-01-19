@@ -8,6 +8,7 @@ transacoes.push({
   valor: 10000,
   descricao: "Saldo inicial",
   transacao: "credito",
+  data: new Date(),
   id: Date.now(),
 });
 
@@ -36,6 +37,30 @@ function atualizarSaldo() {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
+}
+
+function renderizarExtrato() {
+  const extrato = html("#lista-transacoes");
+  extrato.innerHTML = "";
+
+  for (let i = 0; i < transacoes.length; i++) {
+    const p = transacoes[i];
+
+    const dataFormatada = p.data.toLocaleDateString("pt-BR");
+    const descricaoFormatada = p.descricao.toUpperCase();
+    const valorFormatado = p.valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    extrato.innerHTML += `
+    <tr>
+      <td>${dataFormatada}</td>
+      <td>${descricaoFormatada}</td>
+      <td>${valorFormatado}</td>
+    </tr>
+    `;
+  }
 }
 
 function novaTransacao(botao) {
@@ -67,8 +92,10 @@ function novaTransacao(botao) {
     valor: valorInformado,
     descricao: descricaoInfromada,
     transacao: tipoTransacao,
+    data: new Date(),
     id: Date.now(),
   });
 
   atualizarSaldo();
+  renderizarExtrato();
 }
