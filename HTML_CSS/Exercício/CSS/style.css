@@ -1,0 +1,123 @@
+/* ! Geral */
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Jersey+25&family=Playwrite+NO:wght@100..400&family=Roboto:ital,wdth@0,75..100;1,75..100&family=Story+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+.navbar-container,
+.content-container {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+/* ! Barra de Navegação */
+
+.navbar {
+  background: linear-gradient(0deg, #c88caa, #a6509f);
+  border-bottom: #462435 2px solid;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-container {
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar li,
+.navbar a {
+  list-style-type: none;
+  text-decoration: none;
+  font-style: italic;
+  color: #462435;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+}
+
+/* ! Conteúdo */
+
+h1,
+h2 {
+  font-family: "Indie Flower", cursive;
+  color: #6a3650;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 25px;
+  padding: 20px 0;
+}
+
+.slogan {
+  text-align: center;
+  font-style: italic;
+  color: #8d486b;
+}
+
+.content-container {
+  margin: 0 100px;
+
+  display: flex;
+  justify-content: space-evenly;
+  gap: 70px;
+}
+
+.product-container {
+  list-style: none;
+
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+
+.product img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.product-container img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 12px -1px rgba(141, 72, 107, 0.64);
+}
+
+.product h3 {
+  color: #b15b86;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.product a {
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #b15b86;
+  color: #f7eef2;
+  font-weight: 700;
+  padding: 7px;
+  margin-top: 30px;
+}
+
+/* ! Aside */
+
+#best-sellers img {
+  max-width: 150px;
+}
