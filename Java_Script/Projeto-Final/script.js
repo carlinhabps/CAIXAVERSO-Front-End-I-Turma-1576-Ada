@@ -7,7 +7,7 @@ const transacoes = [];
 transacoes.push({
   valor: usuario.saldo,
   descricao: "Saldo inicial",
-  transacao: "saldo",
+  transacao: "Saldo",
   data: new Date(),
   id: Date.now(),
 });
@@ -23,11 +23,14 @@ html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
 });
 
 function atualizarSaldo() {
-  usuario.saldo = transacoes.reduce((total, valor) => {
-    if (valor.transacao === "debito") {
-      return total - valor.valor;
+  usuario.saldo = transacoes.reduce((total, movimentacao) => {
+    if (
+      movimentacao.transacao === "Depósito" ||
+      movimentacao.transacao === "Saque"
+    ) {
+      return total - movimentacao.valor;
     } else {
-      return total + valor.valor;
+      return total + movimentacao.valor;
     }
   }, 0);
 
@@ -54,19 +57,20 @@ function renderizarExtrato() {
     });
 
     let corTransacao;
-    if (p.transacao === "credito") {
-      corTransacao = "entrada";
-    } else if (p.transacao === "debito") {
+    if (p.transacao === "Depósito" || p.transacao === "Saque") {
       corTransacao = "saida";
+    } else {
+      corTransacao = "entrada";
     }
 
     extrato.innerHTML += `
-    <tr>
-      <td class="${corTransacao}">${dataFormatada}</td>
-      <td class="${corTransacao}">${descricaoFormatada}</td>
-      <td class="${corTransacao}">${valorFormatado}</td>
+    <tr class="${corTransacao}">
+      <td>${p.transacao}</td>
+      <td>${dataFormatada}</td>
+      <td>${descricaoFormatada}</td>
+      <td>${valorFormatado}</td>
     </tr>
-    `;
+  `;
   }
 }
 
@@ -84,15 +88,17 @@ function novaTransacao(botao) {
   }
 
   const descricaoInfromada = prompt(
-    "Por favor, informe a descrição da transação:"
+    "Por favor, informe a descrição da transação:",
   );
 
   let tipoTransacao;
 
   if (botao === "deposito") {
-    tipoTransacao = "credito";
+    tipoTransacao = "Depósito";
+  } else if (botao === "saque") {
+    tipoTransacao = "Saque";
   } else if (botao === "pagamento") {
-    tipoTransacao = "debito";
+    tipoTransacao = "Boleto";
   }
 
   transacoes.push({

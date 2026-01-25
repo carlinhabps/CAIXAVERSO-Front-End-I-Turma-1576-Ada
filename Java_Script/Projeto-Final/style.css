@@ -109,12 +109,12 @@ th {
   font-size: 0.9rem;
 }
 
-.entrada {
+.entrada td {
   color: #00b894;
   font-weight: bold;
 }
 
-.saida {
+.saida td {
   color: #d63031;
   font-weight: bold;
 }
