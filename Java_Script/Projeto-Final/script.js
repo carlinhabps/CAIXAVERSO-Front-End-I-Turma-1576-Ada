@@ -25,7 +25,7 @@ html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
 function atualizarSaldo() {
   usuario.saldo = transacoes.reduce((total, movimentacao) => {
     if (
-      movimentacao.transacao === "Depósito" ||
+      movimentacao.transacao === "Boleto" ||
       movimentacao.transacao === "Saque"
     ) {
       return total - movimentacao.valor;
@@ -57,7 +57,7 @@ function renderizarExtrato() {
     });
 
     let corTransacao;
-    if (p.transacao === "Depósito" || p.transacao === "Saque") {
+    if (p.transacao === "Boleto" || p.transacao === "Saque") {
       corTransacao = "saida";
     } else {
       corTransacao = "entrada";
