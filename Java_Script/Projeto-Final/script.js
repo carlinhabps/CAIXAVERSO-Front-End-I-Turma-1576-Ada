@@ -128,5 +128,8 @@ function novaTransacao(botao) {
       <td colspan = 5 >${erro.message}</td>
     </tr>
   `;
+
+    transacoes.pop();
+    console.log(transacoes);
   }
 }
