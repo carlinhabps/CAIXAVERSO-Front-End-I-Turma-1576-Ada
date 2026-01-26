@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    color: blueviolet;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não estoure pra fora do box */
+}
+
+button {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background-color: #00a383;
+}
+
+#resultado {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50px;
+}
+
+.box-sucesso {
+    background-color: #d1fae5; 
+    color: #065f46; 
+    border: 1px solid #10b981;
+}
+
+.box-erro {
+    background-color: #fee2e2; 
+    color: #991b1b; 
+    border: 1px solid #f87171;
+}
+
+.dado-visual {
+    display: inline-block;
+    background-color: #6c5ce7;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    line-height: 30px;
+    margin: 3px;
+    text-align: center;
+    font-weight: bold;
+}

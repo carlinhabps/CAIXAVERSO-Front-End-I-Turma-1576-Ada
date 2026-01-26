@@ -36,10 +36,17 @@ function atualizarSaldo() {
 
   console.log(usuario.saldo);
 
+  if () {
+    
+  }
+
   html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
+
+
+
 }
 
 function renderizarExtrato() {
