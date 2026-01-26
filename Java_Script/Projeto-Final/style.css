@@ -118,3 +118,10 @@ th {
   color: #d63031;
   font-weight: bold;
 }
+
+.erro td {
+  color: tomato;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
