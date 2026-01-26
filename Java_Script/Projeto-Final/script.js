@@ -1,13 +1,13 @@
 const usuario = {
   nome: "Carla Beatriz",
-  saldo: 100000,
+  saldo: 1000,
 };
 
 const transacoes = [];
 transacoes.push({
   valor: usuario.saldo,
   descricao: "Saldo inicial",
-  transacao: "Saldo",
+  transacao: "C",
   data: new Date(),
   id: Date.now(),
 });
@@ -23,30 +23,25 @@ html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
 });
 
 function atualizarSaldo() {
-  usuario.saldo = transacoes.reduce((total, movimentacao) => {
-    if (
-      movimentacao.transacao === "Saque" ||
-      movimentacao.transacao === "Boleto"
-    ) {
-      return total - movimentacao.valor;
+  let creditos = 0;
+  let debitos = 0;
+
+  for (let i = 0; i < transacoes.length; i++) {
+    if (transacoes[i].transacao === "C") {
+      creditos += transacoes[i].valor;
     } else {
-      return total + movimentacao.valor;
+      debitos += transacoes[i].valor;
     }
-  }, 0);
+
+    usuario.saldo = creditos - debitos;
+  }
 
   console.log(usuario.saldo);
-
-  if () {
-    
-  }
 
   html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-
-
-
 }
 
 function renderizarExtrato() {
@@ -64,28 +59,18 @@ function renderizarExtrato() {
     });
 
     let corTransacao;
-    if (p.transacao === "Saque" || p.transacao === "Boleto") {
-      corTransacao = "saida";
-    } else {
+    if (p.transacao === "C") {
       corTransacao = "entrada";
-    }
-
-    let tipoTransacao;
-    if (p.transacao === "Depósito") {
-      tipoTransacao = "C";
-    } else if (p.transacao === "Saldo") {
-      tipoTransacao = "";
     } else {
-      tipoTransacao = "D";
+      corTransacao = "saida";
     }
 
     extrato.innerHTML += `
     <tr class="${corTransacao}">
-      <td>${p.transacao}</td>
       <td>${dataFormatada}</td>
       <td>${descricaoFormatada}</td>
       <td>${valorFormatado}</td>
-      <td>${tipoTransacao}</td>
+      <td>${p.transacao}</td>
     </tr>
   `;
   }
@@ -104,18 +89,20 @@ function novaTransacao(botao) {
     return novaTransacao(botao);
   }
 
-  const descricaoInfromada = prompt(
+  let descricaoInfromada = prompt(
     "Por favor, informe a descrição da transação:",
   );
+  if (!descricaoInfromada) {
+    descricaoInfromada = botao;
+  }
 
   let tipoMovimentacao;
-
   if (botao === "deposito") {
-    tipoMovimentacao = "Depósito";
+    tipoMovimentacao = "C";
   } else if (botao === "saque") {
-    tipoMovimentacao = "Saque";
+    tipoMovimentacao = "D";
   } else if (botao === "pagamento") {
-    tipoMovimentacao = "Boleto";
+    tipoMovimentacao = "D";
   }
 
   transacoes.push({
