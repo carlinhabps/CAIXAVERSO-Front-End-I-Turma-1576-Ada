@@ -25,8 +25,8 @@ html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
 function atualizarSaldo() {
   usuario.saldo = transacoes.reduce((total, movimentacao) => {
     if (
-      movimentacao.transacao === "Boleto" ||
-      movimentacao.transacao === "Saque"
+      movimentacao.transacao === "Saque" ||
+      movimentacao.transacao === "Boleto"
     ) {
       return total - movimentacao.valor;
     } else {
@@ -57,10 +57,19 @@ function renderizarExtrato() {
     });
 
     let corTransacao;
-    if (p.transacao === "Boleto" || p.transacao === "Saque") {
+    if (p.transacao === "Saque" || p.transacao === "Boleto") {
       corTransacao = "saida";
     } else {
       corTransacao = "entrada";
+    }
+
+    let tipoTransacao;
+    if (p.transacao === "Depósito") {
+      tipoTransacao = "C";
+    } else if (p.transacao === "Saldo") {
+      tipoTransacao = "";
+    } else {
+      tipoTransacao = "D";
     }
 
     extrato.innerHTML += `
@@ -69,6 +78,7 @@ function renderizarExtrato() {
       <td>${dataFormatada}</td>
       <td>${descricaoFormatada}</td>
       <td>${valorFormatado}</td>
+      <td>${tipoTransacao}</td>
     </tr>
   `;
   }
@@ -81,30 +91,30 @@ function novaTransacao(botao) {
 
   if (isNaN(valorInformado)) {
     alert("Por favor, informe um valor numérico válido.");
-    return novaTransacao();
+    return novaTransacao(botao);
   } else if (valorInformado < 0) {
     alert("Por favor, informe o valor SEM o sinal de menos!");
-    return novaTransacao();
+    return novaTransacao(botao);
   }
 
   const descricaoInfromada = prompt(
     "Por favor, informe a descrição da transação:",
   );
 
-  let tipoTransacao;
+  let tipoMovimentacao;
 
   if (botao === "deposito") {
-    tipoTransacao = "Depósito";
+    tipoMovimentacao = "Depósito";
   } else if (botao === "saque") {
-    tipoTransacao = "Saque";
+    tipoMovimentacao = "Saque";
   } else if (botao === "pagamento") {
-    tipoTransacao = "Boleto";
+    tipoMovimentacao = "Boleto";
   }
 
   transacoes.push({
     valor: valorInformado,
     descricao: descricaoInfromada,
-    transacao: tipoTransacao,
+    transacao: tipoMovimentacao,
     data: new Date(),
     id: Date.now(),
   });
