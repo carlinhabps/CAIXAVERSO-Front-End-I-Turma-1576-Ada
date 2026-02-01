@@ -1,7 +1,7 @@
 :root {
-  --primary: #6c5ce7;
-  --bg: #dfe6e9;
-  --text: #2d3436;
+  --primary: #14213d;
+  --bg: #e5e5e5;
+  --text: #14213d;
 }
 
 body {
@@ -26,20 +26,31 @@ body {
 
 header {
   background-color: var(--primary);
-  color: white;
+  color: #e5e5e5;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.nome-box {
+  text-align: left;
+}
+
 .saldo-box {
   text-align: right;
 }
 
+.nome-box,
+.saldo-box {
+  margin: 1.5rem 0;
+}
+
+#nome-usuario,
 .saldo-valor {
   font-size: 2rem;
   font-weight: bold;
+  margin: 0;
 }
 
 /* Actions */
@@ -52,6 +63,7 @@ header {
 }
 
 button {
+  font-size: 0.95rem;
   flex: 1;
   padding: 15px;
   border: none;
@@ -63,15 +75,15 @@ button {
 }
 
 .btn-deposit {
-  background-color: #00b894;
+  background-color: #2d8b76;
 }
 
 .btn-cash {
-  background-color: #6ac54c;
+  background-color: #aa0e1b;
 }
 
 .btn-pay {
-  background-color: #d63031;
+  background-color: #aa0e1b;
 }
 
 button:hover {
@@ -90,6 +102,15 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.extract select {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 10rem;
+  padding: 0.2rem;
+  border: 1px solid #eee;
 }
 
 table {
@@ -110,17 +131,17 @@ th {
 }
 
 .entrada td {
-  color: #00b894;
+  color: #2d8b76;
   font-weight: bold;
 }
 
 .saida td {
-  color: #d63031;
+  color: #aa0e1b;
   font-weight: bold;
 }
 
 .erro td {
-  color: tomato;
+  color: #d63031;
   font-weight: bold;
   text-decoration: underline;
   text-align: center;
