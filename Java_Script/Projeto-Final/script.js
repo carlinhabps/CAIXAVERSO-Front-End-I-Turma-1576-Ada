@@ -40,8 +40,6 @@ function atualizarSaldo() {
 
   usuario.saldo = creditos - debitos;
 
-  console.log(usuario.saldo);
-
   html("#saldo").innerHTML = usuario.saldo.toLocaleString("pt-br", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -120,16 +118,21 @@ function novaTransacao(botao) {
 
     atualizarSaldo();
     renderizarExtrato();
+
+    console.log(transacoes);
+    console.log(usuario.saldo);
   } catch (erro) {
     console.error("Erro capturado:", erro);
 
-    html("#lista-transacoes").innerHTML += `
-    <tr class="erro">
-      <td colspan = 5 >${erro.message}</td>
-    </tr>
-  `;
-
-    transacoes.pop();
+    if (erro.message === "Saldo insuficiente para realizar a transação") {
+      html("#lista-transacoes").innerHTML += `
+      <tr class="erro">
+        <td colspan = 5 >${erro.message}</td>
+      </tr>
+      `;
+      transacoes.pop();
+    }
     console.log(transacoes);
+    console.log(usuario.saldo);
   }
 }
