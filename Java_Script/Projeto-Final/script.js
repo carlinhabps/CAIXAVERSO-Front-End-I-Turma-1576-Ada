@@ -1,6 +1,6 @@
 const usuario = {
   nome: "Carla Beatriz",
-  saldo: 1000,
+  saldo: 100000,
 };
 
 const transacoes = [];
@@ -46,12 +46,12 @@ function atualizarSaldo() {
   });
 }
 
-function renderizarExtrato() {
+function renderizarExtrato(filtro) {
   const extrato = html("#lista-transacoes");
   extrato.innerHTML = "";
 
-  for (let i = 0; i < transacoes.length; i++) {
-    const p = transacoes[i];
+  for (let i = 0; i < filtro.length; i++) {
+    const p = filtro[i];
 
     const dataFormatada = p.data.toLocaleDateString("pt-BR");
     const descricaoFormatada = p.descricao.toUpperCase();
@@ -117,7 +117,7 @@ function novaTransacao(botao) {
     });
 
     atualizarSaldo();
-    renderizarExtrato();
+    renderizarExtrato(transacoes);
 
     console.log(transacoes);
     console.log(usuario.saldo);
@@ -134,5 +134,27 @@ function novaTransacao(botao) {
     }
     console.log(transacoes);
     console.log(usuario.saldo);
+  }
+}
+
+function filtrarExtrato() {
+  let option = html("#filtro-tipo").value;
+
+  console.log(option);
+
+  if (option === "todos") {
+    renderizarExtrato(transacoes);
+  }
+
+  if (option === "entrada") {
+    const entradas = transacoes.filter((option) => option.transacao === "C");
+
+    renderizarExtrato(entradas);
+  }
+
+  if (option === "saida") {
+    const saidas = transacoes.filter((option) => option.transacao === "D");
+
+    renderizarExtrato(saidas);
   }
 }
