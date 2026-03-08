@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Aumiau Store</title>
+        <link href="css/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="titulo-principal">Bem vindos ao site da Aumiau Store</h1>
+        <p class="slogan">Os melhores modelos de roupas para pets estão aqui.</p>
+        <h2 class="titulo-secao">Produtos em destaque:</h2>
+        <ul class="produtos-destaque">
+            <li class="produto">
+                <img src="imagens/chucky.png" />
+                <h3>Roupinha do Chucky</h3>
+                <a href="chucky.html">Clique aqui para detalhes</a>
+            </li>
+            <li class="produto">
+                <img src="imagens/cowboy.webp" />
+                <h3>Roupinha Cowboy</h3>
+                <a href="cowboy.html">Clique aqui para detalhes</a>
+            </li>
+            <li class="produto">
+                <img src="imagens/dino.png" />
+                <h3>Roupinha Dino</h3>
+                <a href="dino.html">Clique aqui para detalhes</a>
+            </li>
+        </ul>
+        <h2 class="titulo-secao">Produtos mais vendidos:</h2>
+        <ol class="mais-vendidos">
+            <li>Dinossauro</li>
+            <li>Cowboy</li>
+            <li>Chucky</li>
+        </ol> 
+        <h2 class="titulo-secao">Assine nossa newsletter!</h2>
+        <form action="https://httpbin.org/post" method="POST">
+            <div class="item-formulario">
+                <label for="nome-tutor">Nome do Tutor:</label>
+                <input type="text" id="nome-tutor" name="nome-tutor" placeholder="Digite seu nome..." />
+            </div>
+            <div class="item-formulario">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
+            </div>
+            <div class="item-formulario">
+                <label for="tipo-pet">Qual o tipo do seu pet?</label>
+                <select id="tipo-pet" name="tipo-pet">
+                    <option value="" selected disabled>-- Selecione uma opção --</option>
+                    <option value="cao">Cão</option>
+                    <option value="gato">Gato</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="item-formulario">
+                <label for="nascimento-pet">Data de Nascimento do Pet:</label>
+                <input type="date" id="nascimento-pet" name="nascimento-pet" />
+            </div>
+            <div class="item-formulario">
+                <label for="sugestao">Sugestão:</label>
+                <textarea id="sugestao" name="sugestao" rows="4" cols="50" placeholder="Deixe sua sugestão aqui..."></textarea>
+            </div>
+            <!-- As duas maneiras de criar botão submit estão corretas -->
+            <!-- <input type="submit" value="Quero Descontos!" /> -->
+            <button type="submit">Quero descontos!</button>
+        </form>
+    </body>
+</html>

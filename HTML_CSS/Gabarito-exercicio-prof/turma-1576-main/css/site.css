@@ -1,0 +1,25 @@
+/* comentário aqui */
+
+:root {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+}
+
+h1 {
+    font-family: "Indie Flower", cursive;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.destaque {
+    color:green;
+}
