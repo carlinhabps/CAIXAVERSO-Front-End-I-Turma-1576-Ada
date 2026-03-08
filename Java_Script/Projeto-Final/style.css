@@ -1,0 +1,148 @@
+:root {
+  --primary: #14213d;
+  --bg: #e5e5e5;
+  --text: #14213d;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+
+header {
+  background-color: var(--primary);
+  color: #e5e5e5;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome-box {
+  text-align: left;
+}
+
+.saldo-box {
+  text-align: right;
+}
+
+.nome-box,
+.saldo-box {
+  margin: 1.5rem 0;
+}
+
+#nome-usuario,
+.saldo-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Actions */
+
+.actions {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+button {
+  font-size: 0.95rem;
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  color: white;
+}
+
+.btn-deposit {
+  background-color: #2d8b76;
+}
+
+.btn-cash {
+  background-color: #aa0e1b;
+}
+
+.btn-pay {
+  background-color: #aa0e1b;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Extract Area */
+
+.extract {
+  padding: 20px;
+}
+
+.extract-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.extract select {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 10rem;
+  padding: 0.2rem;
+  border: 1px solid #eee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+.entrada td {
+  color: #2d8b76;
+  font-weight: bold;
+}
+
+.saida td {
+  color: #aa0e1b;
+  font-weight: bold;
+}
+
+.erro td {
+  color: #d63031;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}

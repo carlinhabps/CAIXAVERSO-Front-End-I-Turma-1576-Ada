@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 01</title>
+  </head>
+  <body>
+    <h1>Bem Vindos ao JavaScript</h1>
+
+    <br /><br />
+
+    <form action="">
+      <label for="nome">Qual o seu nome</label>
+      <input type="text" id="nome" name="Nome" required />
+
+      <br /><br />
+
+      <label for="nota1">Nota da primeira prova:</label>
+      <input type="number" id="nota1" name="Nota 1" min="0" required />
+
+      <br /><br />
+
+      <label for="nota2">Nota da segunda prova:</label>
+      <input type="number" id="nota2" name="Nota 2" min="0" required />
+
+      <br /><br />
+
+      <button type="button" onclick="calcularMedia()">Calcular a média</button>
+    </form>
+
+    <p id="resultado"></p>
+  </body>
+
+  <script src="./desafio.js"></script>
+</html>

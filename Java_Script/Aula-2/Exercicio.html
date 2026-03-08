@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Exercicio.css" />
+
+    <title>Notas do Aluno</title>
+  </head>
+  <body>
+    <header>
+      <h1>Notas do Aluno</h1>
+    </header>
+    <main>
+      <br />
+      <div class="form-aluno">
+        <label for="nomeAluno">Nome do Aluno(a):</label>
+        <br />
+
+        <input
+          type="text"
+          id="nomeAluno"
+          placeholder="Digite o nome completo"
+        />
+        <br />
+        <br />
+
+        <label for="nota1"
+          >Digite a nota da <span>primeira</span> avaliação - peso 2:
+        </label>
+        <br />
+
+        <input type="text" id="nota1" name="Nota1" />
+        <br />
+        <br />
+        <label for="nota2"
+          >Digite a nota da <span>segunda</span> avaliação:</label
+        >
+        <br />
+        <input type="text" id="nota2" name="Nota2" />
+        <br />
+        <br />
+
+        <label for="nota3"
+          >Digite a nota da <span>terceira</span> avaliação:</label
+        >
+        <br />
+        <input type="text" id="nota3" name="Nota3" />
+        <br />
+        <br />
+
+        <button type="button" onclick="calcularMedia()">Calcular!</button>
+      </div>
+
+      <div id="resultado">
+        Notas cadastradas para <span class="nomeAluno"></span>:
+        <div class="notasAluno"></div>
+        Resultando na média: <span class="media"></span>
+      </div>
+    </main>
+  </body>
+
+  <script src="./Exercicio.js"></script>
+</html>

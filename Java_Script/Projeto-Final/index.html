@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>FutureBank - Seu Banco Digital</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="nome-box">
+          <small>Olá,</small>
+          <h2 id="nome-usuario">Carregando...</h2>
+        </div>
+        <div class="saldo-box">
+          <small>Saldo Atual</small>
+          <div class="saldo-valor">R$ <span id="saldo">0,00</span></div>
+        </div>
+      </header>
+      <section class="actions">
+        <button class="btn-deposit" onclick="novaTransacao('deposito')">
+          💰 Depositar
+        </button>
+        <button class="btn-cash" onclick="novaTransacao('saque')">
+          🪙 Sacar
+        </button>
+        <button class="btn-pay" onclick="novaTransacao('pagamento')">
+          💸 Pagar Boleto
+        </button>
+      </section>
+      <section class="extract">
+        <div class="extract-header">
+          <h3>Extrato Recente</h3>
+          <!-- Desafio: Fazer estes filtros funcionarem -->
+          <select id="filtro-tipo" onchange="filtrarExtrato()">
+            <option value="todos">Todos</option>
+            <option value="entrada">Entradas</option>
+            <option value="saida">Saídas</option>
+          </select>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Transação</th>
+            </tr>
+          </thead>
+          <tbody id="lista-transacoes">
+            <!-- As linhas serão inseridas aqui via JS -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
